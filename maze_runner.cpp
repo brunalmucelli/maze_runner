@@ -7,7 +7,7 @@
 
 // Representação do labirinto
 using Maze = std::vector<std::vector<char>>;
-//teste
+
 // Estrutura para representar uma posição no labirinto
 struct Position {
     int row;
@@ -30,8 +30,31 @@ Position load_maze(const std::string& file_name) {
     // 5. Encontre e retorne a posição inicial ('e')
     // 6. Trate possíveis erros (arquivo não encontrado, formato inválido, etc.)
     // 7. Feche o arquivo após a leitura
-    
-    return {-1, -1}; // Placeholder - substitua pelo valor correto
+    std::ifstream file(file_name);
+
+    if (!file) {
+        std::cerr << "Erro ao abrir o arquivo " << file_name << std::endl;
+        return {-1, -1};
+    }
+
+    // Ler dimensões do labirinto
+    file >> num_rows >> num_cols;
+    maze.resize(num_rows, std::vector<char>(num_cols));
+
+    Position start_pos = {-1, -1};
+
+    // Ler conteúdo do labirinto
+    for (int i = 0; i < num_rows; ++i) {
+        for (int j = 0; j < num_cols; ++j) {
+            file >> maze[i][j];
+            if (maze[i][j] == 'e') {
+                start_pos = {i, j};  // Encontrou a posição inicial
+            }
+        }
+    }
+
+    file.close();
+    return start_pos;
 }
 
 // Função para imprimir o labirinto
@@ -40,6 +63,12 @@ void print_maze() {
     // 1. Percorra a matriz 'maze' usando um loop aninhado
     // 2. Imprima cada caractere usando std::cout
     // 3. Adicione uma quebra de linha (std::cout << '\n') ao final de cada linha do labirinto
+    for (int i = 0; i < num_rows; ++i) {
+        for (int j = 0; j < num_cols; ++j) {
+            std::cout << maze[i][j] << ' ';
+        }
+        std::cout << '\n';
+    }
 }
 
 // Função para verificar se uma posição é válida
@@ -49,8 +78,12 @@ bool is_valid_position(int row, int col) {
     //    (row >= 0 && row < num_rows && col >= 0 && col < num_cols)
     // 2. Verifique se a posição é um caminho válido (maze[row][col] == 'x')
     // 3. Retorne true se ambas as condições forem verdadeiras, false caso contrário
-
-    return false; // Placeholder - substitua pela lógica correta
+    if ( row >= 0 && row < num_rows && col >= 0 && col < num_cols && maze[row][col] == 'x'){
+        return true;
+    }
+    else{
+        return false;
+    }
 }
 
 // Função principal para navegar pelo labirinto
