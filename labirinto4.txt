@@ -1,0 +1,13 @@
+12 12
+# # # # # # # # # # # #
+# e x x # x x x x x x #
+# # x # # x # # # # x #
+# x x # x x x # x x x #
+# x # # x # # # x # # #
+# x x x x x x x x x # #
+# # # # # x # # x x x #
+# x x x x x x x # # x #
+# x # # # # x x x x x #
+# x x x x x x x x # # #
+# x # # # x x x x x s #
+# # # # # # # # # # # #

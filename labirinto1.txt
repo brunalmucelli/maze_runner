@@ -1,0 +1,4 @@
+3 6
+e x x # x s
+# x # x x #
+x x x x # #

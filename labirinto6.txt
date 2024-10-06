@@ -1,0 +1,16 @@
+15 15
+# # # # # # # # # # # # # # #
+# e x x x # x x x x # x x x #
+# # # # x # # # x # # # # x #
+# x x # x x x # x x x x # x #
+# x # # x # # x x # # x # # #
+# x x x x # x x x # x x x x #
+# # # x # x # # # x # # # # #
+# x x x x x x x x x x x x x #
+# x # # # # # # # # # x # x #
+# x x x x x x x x x x x # s #
+# # # # # x # # # # x # # # #
+# x x x x x x x x # x x x x #
+# x # # # x # # x # # # x # #
+# x x x x x x x x x x x x x #
+# # # # # # # # # # # # # # #
