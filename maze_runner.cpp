@@ -7,7 +7,7 @@
 
 // Representação do labirinto
 using Maze = std::vector<std::vector<char>>;
-
+//teste
 // Estrutura para representar uma posição no labirinto
 struct Position {
     int row;
